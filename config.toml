@@ -14,7 +14,7 @@ theme = 'PaperMod'
 
   [[params.socialIcons]]
   name = "github"
-  url = "https://github.com/JordanTheITGuy"
+  url = "https://github.com/JordanTheITGuy/Isconfigmgrdead.com-Hugo"
 
 [params]
     defaultTheme = "dark"
