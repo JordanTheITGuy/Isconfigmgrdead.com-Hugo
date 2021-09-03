@@ -8,7 +8,7 @@ Enter Hugo. When I first learned about Hugo it was through a discord group calle
 
 One of the core reasons I wanted to start this was to allow other users and not just myself the oppurtunity to provide positive reasons why Configuration Manager, a platform that has served us for years should have something like this to remember it by. To that end this repo will accept pull requests. However, they will require a review by myself before they are merged.
 
-To get something added to the site, simply add a new markdown file into the 'posts' section of the site. It will need to observe the following format at the top. 
+To get something added to the site, simply add a new markdown file into the 'posts' section of the site located here https://github.com/JordanTheITGuy/Isconfigmgrdead.com-Hugo/tree/main/content/posts. It will need to observe the following format at the top. 
 ```md
 ---
 title: "Name of the post"
