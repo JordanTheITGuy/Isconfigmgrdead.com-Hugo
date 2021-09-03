@@ -1,41 +1,61 @@
 baseURL = 'http://example.org/'
 languageCode = 'en-us'
 title = 'Is Configuration Manager Dead'
-theme = 'Introduction'
+theme = 'PaperMod'
+
+
+[params.homeInfoParams]
+    Title = "No, it's not dead and won't be for while"
+    Content = "This blog contains various tweets, and other resources to help showcase the continued love and development of the Configuration Manager Platform. The twitter link below will point you to the owner of this site, and the Github link will dirct you to the repository so you can make requests to add to his site."
+
+ [[params.socialIcons]]
+  name = "Twitter"
+  url = "https://twitter.com/JordanTheITguy"
+
+  [[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/JordanTheITGuy"
 
 [params]
-    themeStyle                   = "dark"
+    defaultTheme = "dark"
+    disableThemeToggle = "true"
 
-    [params.share]
-        twitter                  = true
-        facebook                 = true
-        pinterest                = true
 
-    # Social icons appear in introduction and contact section. Add as many more as you like.
-    # Icon pack "fab" includes social network icons, see: https://fontawesome.com/icons?d=gallery&s=brands&m=free
-    # Icon pack "fas" includes solid style icons, see: https://fontawesome.com/icons?d=gallery&s=solid&m=free
-    [[params.social]]
-        url   = "https://twitter.com/"
-        icon  = "twitter" # icon name without the 'fa-'
-        icon_pack = "fab"
-    [[params.social]]
-        url   = "https://facebook.com/"
-        icon  = "facebook-f" # icon name without the 'fa-'
-        icon_pack = "fab"
-    [[params.social]]
-        url   = "https://linkedin.com/"
-        icon  = "linkedin-in" # icon name without the 'fa-'
-        icon_pack = "fab"
 
- [[menu.main]]
-     name    = "Home"
-     url     = "/"
-     weight  = 1
- [[menu.main]]
-     name    = "Blog"
-     url     = "https://jordantheitguy.com"
-     weight  = 2
-      [[menu.main]]
-     name    = "Records"
-     url     = "/records"
-     weight  = 3
+# Introduction themes params
+#[params]
+    #themeStyle                   = "dark"
+#
+    #[params.share]
+        #twitter                  = true
+        #facebook                 = true
+        #pinterest                = true
+#
+    ## Social icons appear in introduction and contact section. Add as many more as you like.
+    ## Icon pack "fab" includes social network icons, see: https://fontawesome.com/icons?d=gallery&s=brands&m=free
+    ## Icon pack "fas" includes solid style icons, see: https://fontawesome.com/icons?d=gallery&s=solid&m=free
+    #[[params.social]]
+        #url   = "https://twitter.com/"
+        #icon  = "twitter" # icon name without the 'fa-'
+        #icon_pack = "fab"
+    #[[params.social]]
+        #url   = "https://facebook.com/"
+        #icon  = "facebook-f" # icon name without the 'fa-'
+        #icon_pack = "fab"
+    #[[params.social]]
+        #url   = "https://linkedin.com/"
+        #icon  = "linkedin-in" # icon name without the 'fa-'
+        #icon_pack = "fab"
+#
+ #[[menu.main]]
+     #name    = "Home"
+     #url     = "/"
+     #weight  = 1
+ #[[menu.main]]
+     #name    = "Blog"
+     #url     = "https://jordantheitguy.com"
+     #weight  = 2
+      #[[menu.main]]
+     #name    = "Records"
+     #url     = "/records"
+     #weight  = 3
