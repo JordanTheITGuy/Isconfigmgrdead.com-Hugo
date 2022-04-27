@@ -1,6 +1,6 @@
 ---
 title: "Aria Carley 2022-04-07"
-date: 2022-04-07 12:39 CST
+date: 2022-04-07 12:00:00 -0600
 draft: false
 ---
 
