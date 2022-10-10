@@ -6,7 +6,7 @@ theme = 'PaperMod'
 
 [params.homeInfoParams]
     Title = "No, it's not dead and won't be for while"
-    Content = "This blog contains various tweets, and other resources to help showcase the continued love and development of the Configuration Manager Platform. The twitter link below will point you to the owner of this site, and the Github link will dirct you to the repository so you can make requests to add to his site."
+    Content = "This blog contains various tweets, and other resources to help showcase the continued love and development of the Configuration Manager Platform. The twitter link below will point you to the owner of this site, and the Github link will direct you to the repository so you can make requests to add to his site."
 
  [[params.socialIcons]]
   name = "Twitter"
