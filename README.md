@@ -30,4 +30,4 @@ Happy Contributing
 3. The **Post from issue** workflow turns the form into `content/posts/<date>-<slug>.md`, checks the site still builds, and opens a PR that closes the issue.
 4. Edit the PR if needed and merge. The site rebuilds and publishes automatically.
 
-The generator lives in `.github/scripts/` (PowerShell, with Pester tests).
+The generator lives in `.github/scripts/` (PowerShell, with Pester tests). Voice and tone for every post: [STYLE.md](STYLE.md).
