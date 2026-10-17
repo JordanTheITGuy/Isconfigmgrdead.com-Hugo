@@ -1,0 +1,93 @@
+name: Submit a post
+description: Suggest a release, known issue, Microsoft statement, or story for isconfigmgrdead.com
+title: "[Post]: "
+labels: ["post-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for keeping ConfigMgr alive. Fill in what you can; the maintainer will turn it into a post and may edit it for length or tone.
+        Every post needs a public source link, so readers can check it for themselves.
+
+  - type: dropdown
+    id: post_type
+    attributes:
+      label: Post type
+      options:
+        - New release or hotfix
+        - Known issue or workaround
+        - Microsoft statement or quote
+        - Community story or win
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: post_title
+    attributes:
+      label: Suggested title
+      placeholder: "Configuration Manager 2609 Release"
+    validations:
+      required: true
+
+  - type: input
+    id: event_date
+    attributes:
+      label: Date it happened
+      description: Release date, date of the statement, or when the issue appeared (YYYY-MM-DD).
+      placeholder: "2026-09-28"
+    validations:
+      required: true
+
+  - type: input
+    id: source
+    attributes:
+      label: Source link
+      description: Release notes, Microsoft Learn or Tech Community post, video timestamp, etc.
+      placeholder: "https://learn.microsoft.com/..."
+    validations:
+      required: true
+
+  - type: input
+    id: speaker
+    attributes:
+      label: Who said it (for quotes)
+      description: Name and role, if this is a statement from a person.
+      placeholder: "Jane Doe, Principal PM, Microsoft Intune"
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened
+      description: A few sentences in your own words. For known issues, include symptoms and the workaround.
+    validations:
+      required: true
+
+  - type: textarea
+    id: quote
+    attributes:
+      label: Key quote (optional)
+      description: Keep it short; one or two sentences, copied exactly from the source.
+
+  - type: input
+    id: tags
+    attributes:
+      label: Tags (optional)
+      placeholder: "release, sql, osd"
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you submit
+      options:
+        - label: The source is publicly available (no NDA or private content).
+          required: true
+        - label: I'm OK with this being edited before it's published.
+          required: true
+
+  - type: input
+    id: credit
+    attributes:
+      label: Credit (optional)
+      description: How you'd like to be credited in the post, if at all.
+      placeholder: "@yourhandle"

@@ -20,8 +20,6 @@ enableRobotsTXT = true
 
     [params.label]
         text = "Is ConfigMgr Dead?"
-        icon = "images/logo.png"      # assets/images/logo.png
-        iconHeight = 36
 
     [params.assets]
         theme_color = "#141A2A"
@@ -32,7 +30,7 @@ enableRobotsTXT = true
         Content = """
 New releases, known issues, and Microsoft's own words on why Configuration Manager keeps on running.
 
-Got a release, quote, or war story that belongs here? [Submit a post](https://github.com/JordanTheITGuy/Isconfigmgrdead.com-Hugo#contributing).
+Got a release, quote, or war story that belongs here? [Submit a post](https://github.com/JordanTheITGuy/Isconfigmgrdead.com-Hugo/issues/new?template=new-post.yml).
 """
 
     [[params.socialIcons]]
@@ -49,22 +47,10 @@ Got a release, quote, or war story that belongs here? [Submit a post](https://gi
 
 [menu]
     [[menu.main]]
-        name = "Posts"
-        url = "/posts/"
-        weight = 10
-    [[menu.main]]
-        name = "Records"
-        url = "/records/"
-        weight = 20
-    [[menu.main]]
-        name = "Archive"
-        url = "/archives/"
-        weight = 30
-    [[menu.main]]
         name = "Tags"
         url = "/tags/"
-        weight = 40
+        weight = 10
     [[menu.main]]
         name = "Submit"
-        url = "https://github.com/JordanTheITGuy/Isconfigmgrdead.com-Hugo#contributing"
-        weight = 50
+        url = "https://github.com/JordanTheITGuy/Isconfigmgrdead.com-Hugo/issues/new?template=new-post.yml"
+        weight = 20
