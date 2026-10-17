@@ -1,21 +1,70 @@
 baseURL = 'https://isconfigmgrdead.com/'
 locale = 'en-us'
-title = 'Is Configuration Manager Dead'
+title = 'Is ConfigMgr Dead?'
 theme = 'PaperMod'
-
-
-[params.homeInfoParams]
-    Title = "No, it's not dead and won't be for while"
-    Content = "This blog contains various tweets, and other resources to help showcase the continued love and development of the Configuration Manager Platform. The twitter link below will point you to the owner of this site, and the Github link will direct you to the repository so you can make requests to add to his site."
-
- [[params.socialIcons]]
-  name = "X"
-  url = "https://x.com/JordanTheITguy"
-
-  [[params.socialIcons]]
-  name = "github"
-  url = "https://github.com/JordanTheITGuy/Isconfigmgrdead.com-Hugo"
+enableRobotsTXT = true
 
 [params]
-    defaultTheme = "dark"
-    disableThemeToggle = true
+    description = "No, Configuration Manager isn't dead. Releases, known issues, and Microsoft's own words on the long, stubborn life of ConfigMgr (SCCM)."
+    keywords = ["ConfigMgr", "SCCM", "Configuration Manager", "MECM", "Intune", "endpoint management"]
+    author = "Jordan Benzing"
+    images = ["images/og-card.jpg"]   # default social card for link previews
+
+    defaultTheme = "auto"             # follow the visitor's OS, toggle remembers their pick
+    disableThemeToggle = false
+
+    ShowReadingTime = true
+    ShowPostNavLinks = true
+    ShowBreadCrumbs = false
+    ShowCodeCopyButtons = true
+
+    [params.label]
+        text = "Is ConfigMgr Dead?"
+        icon = "images/logo.png"      # assets/images/logo.png
+        iconHeight = 36
+
+    [params.assets]
+        theme_color = "#141A2A"
+        msapplication_TileColor = "#141A2A"
+
+    [params.homeInfoParams]
+        Title = "No. Not even close."
+        Content = """
+New releases, known issues, and Microsoft's own words on why Configuration Manager keeps on running.
+
+Got a release, quote, or war story that belongs here? [Submit a post](https://github.com/JordanTheITGuy/Isconfigmgrdead.com-Hugo#contributing).
+"""
+
+    [[params.socialIcons]]
+        name = "X"
+        url = "https://x.com/JordanTheITguy"
+
+    [[params.socialIcons]]
+        name = "github"
+        url = "https://github.com/JordanTheITGuy/Isconfigmgrdead.com-Hugo"
+
+    [[params.socialIcons]]
+        name = "rss"
+        url = "index.xml"
+
+[menu]
+    [[menu.main]]
+        name = "Posts"
+        url = "/posts/"
+        weight = 10
+    [[menu.main]]
+        name = "Records"
+        url = "/records/"
+        weight = 20
+    [[menu.main]]
+        name = "Archive"
+        url = "/archives/"
+        weight = 30
+    [[menu.main]]
+        name = "Tags"
+        url = "/tags/"
+        weight = 40
+    [[menu.main]]
+        name = "Submit"
+        url = "https://github.com/JordanTheITGuy/Isconfigmgrdead.com-Hugo#contributing"
+        weight = 50

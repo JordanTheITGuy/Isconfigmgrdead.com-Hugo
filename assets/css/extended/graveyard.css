@@ -1,0 +1,164 @@
+/*
+ * "Graveyard" palette for isconfigmgrdead.com
+ * Colors sampled from the zombie-hand logo. Loaded automatically by PaperMod
+ * (anything in assets/css/extended/ is bundled after the theme CSS).
+ * All text/background pairs meet WCAG AA.
+ */
+
+@font-face {
+    font-family: "Press Start 2P";
+    src: url("/fonts/press-start-2p-latin-400-normal.woff2") format("woff2");
+    font-display: swap;
+}
+
+/* ---------- Light: "tombstone by day" ---------- */
+:root {
+    --main-width: 680px;            /* ~70 characters per line */
+
+    --theme: #F2F0E9;               /* pale stone page */
+    --entry: #FAF9F5;               /* cards */
+    --primary: #0C0F1C;             /* headings */
+    --content: #141A2A;             /* body text, 15:1 */
+    --secondary: #525D66;           /* metadata, 5.9:1 */
+    --tertiary: #CDD3CF;
+    --border: #DCDDD5;
+    --code-bg: #E4E4DC;
+    --code-block-bg: #141A2A;       /* code blocks stay night-sky in both modes */
+
+    --link: #266E35;                /* darkened zombie green, 5.3:1 */
+    --link-hover: #1F5FB0;          /* cable blue */
+    --inline-code: #1F5FB0;
+    --tag-bg: #DDE8D3;
+    --tag-text: #266E35;
+    --accent-warm: #8A4F2C;         /* rust */
+    --selection: #C8E6B4;
+}
+
+/* ---------- Dark: "night graveyard" ---------- */
+:root[data-theme="dark"] {
+    --theme: #141A2A;               /* the logo's night sky */
+    --entry: #1C2433;
+    --primary: #F0F4F2;
+    --content: #DCE3E8;             /* 13:1 */
+    --secondary: #9AA6AE;           /* tombstone grey, 7:1 */
+    --tertiary: #2C3A48;
+    --border: #24353F;              /* fog slate */
+    --code-bg: #1C2433;
+    --code-block-bg: #0C0F1C;
+
+    --link: #7FE653;                /* glow green, 11:1 */
+    --link-hover: #EBBE28;          /* cable amber */
+    --inline-code: #4DB8DE;         /* cable cyan */
+    --tag-bg: #24353F;
+    --tag-text: #A7D976;
+    --accent-warm: #EBBE28;
+    --selection: #2E5A3A;
+}
+
+/* ---------- Reading comfort ---------- */
+body {
+    line-height: 1.65;
+}
+
+::selection {
+    background: var(--selection);
+}
+
+/* ---------- Links ---------- */
+.md-content a:not(.anchor),
+.post-content a,
+.home-info .entry-content a {
+    color: var(--link);
+    text-decoration-thickness: 1px;
+}
+
+.md-content a:not(.anchor):hover,
+.post-content a:hover,
+.home-info .entry-content a:hover {
+    color: var(--link-hover);
+}
+
+.md-content code:not(pre code),
+.post-content code:not(pre code) {
+    color: var(--inline-code);
+}
+
+/* ---------- Header: pixel-font site name next to the logo ---------- */
+.logo a {
+    font-family: "Press Start 2P", ui-monospace, monospace;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    gap: 10px;
+}
+
+.logo a img {
+    border-radius: 4px;
+    image-rendering: auto;
+}
+
+#theme-toggle svg {
+    color: var(--accent-warm);
+}
+
+#menu a:hover,
+.logo a:hover {
+    color: var(--link);
+}
+
+/* ---------- Tags ---------- */
+.post-tags a {
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    border-color: transparent;
+}
+
+.post-tags a:hover {
+    background: var(--tag-bg);
+    color: var(--link-hover);
+}
+
+/* ---------- Homepage hero ---------- */
+.home-logo {
+    display: block;
+    width: min(320px, 70%);
+    height: auto;
+    margin: 0 auto var(--content-gap);
+    border-radius: 6px;
+}
+
+.home-info .entry-header h1 {
+    font-family: "Press Start 2P", ui-monospace, monospace;
+    font-size: 22px;
+    line-height: 1.5;
+    text-align: center;
+    color: var(--link);
+}
+
+.home-info .entry-content {
+    text-align: center;
+}
+
+.home-info .social-icons {
+    justify-content: center;
+    display: flex;
+}
+
+/* Post cards pick up a hint of glow on hover */
+.post-entry:hover {
+    border-color: var(--link);
+}
+
+@media screen and (max-width: 768px) {
+    .logo a {
+        font-size: 12px;
+    }
+    .home-info .entry-header h1 {
+        font-size: 17px;
+    }
+}
+
+/* PaperMod paints list pages with --code-bg in light mode; keep the stone page colour */
+.list {
+    background: var(--theme);
+}
