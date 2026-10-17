@@ -22,3 +22,12 @@ draft: false
 You can then include media in the post from other sources if you so choose. However make sure you read up on how Hugo implements shortcodes https://gohugo.io/content-management/shortcodes/
 
 Happy Contributing
+
+# How submissions become posts
+
+1. Someone fills in the [Submit a post](https://github.com/JordanTheITGuy/Isconfigmgrdead.com-Hugo/issues/new?template=new-post.yml) form. The issue gets the `post-submission` label.
+2. The maintainer reviews it. To accept, add the `approved` label.
+3. The **Post from issue** workflow turns the form into `content/posts/<date>-<slug>.md`, checks the site still builds, and opens a PR that closes the issue.
+4. Edit the PR if needed and merge. The site rebuilds and publishes automatically.
+
+The generator lives in `.github/scripts/` (PowerShell, with Pester tests).

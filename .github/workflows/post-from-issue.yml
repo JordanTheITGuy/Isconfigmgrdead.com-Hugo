@@ -1,0 +1,85 @@
+name: Post from issue
+
+# Adding the "approved" label to a "post-submission" issue turns it into a
+# draft post PR. Only people with triage/write access can add labels, so
+# applying the label is the approval step.
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: post-from-issue-${{ github.event.issue.number }}
+  cancel-in-progress: true
+
+env:
+  HUGO_VERSION: '0.168.0'
+
+jobs:
+  draft-post:
+    if: >-
+      github.repository == 'JordanTheITGuy/isconfigmgrdead.com-hugo' &&
+      github.event.label.name == 'approved' &&
+      contains(github.event.issue.labels.*.name, 'post-submission')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          submodules: true
+
+      # Issue text is untrusted: it only ever reaches scripts through env vars.
+      - name: Generate post from issue form
+        id: post
+        shell: pwsh
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+        run: ./.github/scripts/New-PostFromIssue.ps1
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: true
+
+      - name: Check the site still builds
+        run: hugo --minify --destination "$RUNNER_TEMP/site"
+
+      - name: Open or update the draft PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE: ${{ github.event.issue.number }}
+          POST_PATH: ${{ steps.post.outputs.path }}
+          POST_TITLE: ${{ steps.post.outputs.title }}
+        run: |
+          branch="post/issue-${ISSUE}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -C "$branch"
+          git add "$POST_PATH"
+          git commit -m "Add post: ${POST_TITLE}" -m "Generated from #${ISSUE}"
+          git push --force -u origin "$branch"
+
+          printf 'Generated from #%s.\n\nReview the wording, edit on this branch if needed, then merge to publish.\n\nCloses #%s\n' \
+            "$ISSUE" "$ISSUE" > "$RUNNER_TEMP/pr-body.md"
+
+          url=$(gh pr list --head "$branch" --state open --json url --jq '.[0].url')
+          if [ -z "$url" ]; then
+            url=$(gh pr create --base main --head "$branch" \
+              --title "Post: ${POST_TITLE}" --body-file "$RUNNER_TEMP/pr-body.md")
+          fi
+          gh issue comment "$ISSUE" --body "Draft post is ready for review: $url"
+
+      - name: Report failure on the issue
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE: ${{ github.event.issue.number }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          gh issue comment "$ISSUE" --body "Couldn't turn this into a post. Check that the title, source link and summary are filled in. Run log: $RUN_URL"
