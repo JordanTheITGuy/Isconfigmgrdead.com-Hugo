@@ -92,11 +92,6 @@ body {
     gap: 10px;
 }
 
-.logo a img {
-    border-radius: 4px;
-    image-rendering: auto;
-}
-
 #theme-toggle svg {
     color: var(--accent-warm);
 }
