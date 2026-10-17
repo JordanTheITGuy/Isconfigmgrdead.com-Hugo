@@ -1,5 +1,5 @@
-baseURL = 'http://isconfigmgrdead.com'
-languageCode = 'en-us'
+baseURL = 'https://isconfigmgrdead.com/'
+locale = 'en-us'
 title = 'Is Configuration Manager Dead'
 theme = 'PaperMod'
 
@@ -9,8 +9,8 @@ theme = 'PaperMod'
     Content = "This blog contains various tweets, and other resources to help showcase the continued love and development of the Configuration Manager Platform. The twitter link below will point you to the owner of this site, and the Github link will direct you to the repository so you can make requests to add to his site."
 
  [[params.socialIcons]]
-  name = "Twitter"
-  url = "https://twitter.com/JordanTheITguy"
+  name = "X"
+  url = "https://x.com/JordanTheITguy"
 
   [[params.socialIcons]]
   name = "github"
@@ -18,44 +18,4 @@ theme = 'PaperMod'
 
 [params]
     defaultTheme = "dark"
-    disableThemeToggle = "true"
-
-
-
-# Introduction themes params
-#[params]
-    #themeStyle                   = "dark"
-#
-    #[params.share]
-        #twitter                  = true
-        #facebook                 = true
-        #pinterest                = true
-#
-    ## Social icons appear in introduction and contact section. Add as many more as you like.
-    ## Icon pack "fab" includes social network icons, see: https://fontawesome.com/icons?d=gallery&s=brands&m=free
-    ## Icon pack "fas" includes solid style icons, see: https://fontawesome.com/icons?d=gallery&s=solid&m=free
-    #[[params.social]]
-        #url   = "https://twitter.com/"
-        #icon  = "twitter" # icon name without the 'fa-'
-        #icon_pack = "fab"
-    #[[params.social]]
-        #url   = "https://facebook.com/"
-        #icon  = "facebook-f" # icon name without the 'fa-'
-        #icon_pack = "fab"
-    #[[params.social]]
-        #url   = "https://linkedin.com/"
-        #icon  = "linkedin-in" # icon name without the 'fa-'
-        #icon_pack = "fab"
-#
- #[[menu.main]]
-     #name    = "Home"
-     #url     = "/"
-     #weight  = 1
- #[[menu.main]]
-     #name    = "Blog"
-     #url     = "https://jordantheitguy.com"
-     #weight  = 2
-      #[[menu.main]]
-     #name    = "Records"
-     #url     = "/records"
-     #weight  = 3
+    disableThemeToggle = true
